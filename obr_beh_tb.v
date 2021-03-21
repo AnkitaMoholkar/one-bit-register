@@ -2,9 +2,9 @@
 // or browse Examples
 module tb;
   wire out;
-  reg in,clk,we; 
+  reg in,clk,we,reset; 
   
-  lab33 l1 (in,we,clk,out);
+  lab33 l1 (in,we,clk,out,reset);
   
   initial begin 
     clk=0;
@@ -12,7 +12,7 @@ module tb;
   end 
   
   initial begin 
-    reset=0; we=1;
+    in=0;reset=0; we=1;
     #10 in=1;
     #10 in=0; 
     #10 in=1;
